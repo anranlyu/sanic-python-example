@@ -3,3 +3,4 @@ mysql-connector-python
 faker
 passlib
 sanic-ext
+python-dotenv

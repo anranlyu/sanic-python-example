@@ -20,6 +20,7 @@ Ideal for developers looking to explore Sanic’s asynchronous capabilities, req
 
 ## 🗂️ Project Structure
 
+
 .
 ├── app/
 │   ├── controllers/       # Route handlers (controllers)

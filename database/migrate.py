@@ -1,6 +1,10 @@
 import mysql.connector
 from mysql.connector import Error
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def create_tables():
     """
@@ -8,10 +12,13 @@ def create_tables():
     """
     try:
         connection = mysql.connector.connect(
-            host= os.getenv('MYSQL_HOST', 'localhost'),   # Cambia esto según tu configuración
+            # Cambia esto según tu configuración
+            host=os.getenv('MYSQL_HOST', 'localhost'),
             user=os.getenv('MYSQL_USER', 'root'),          # Cambia el usuario
-            password=os.getenv('MYSQL_PASSWORD', 'root_password'),   # Cambia la contraseña
-            database=os.getenv('MYSQL_DATABASE', 'test_db')  # Cambia el nombre de la base de datos
+            # Cambia la contraseña
+            password=os.getenv('MYSQL_PASSWORD', 'root_password'),
+            # Cambia el nombre de la base de datos
+            database=os.getenv('MYSQL_DATABASE', 'test_db')
         )
 
         if connection.is_connected():
@@ -36,6 +43,7 @@ def create_tables():
             cursor.close()
             connection.close()
             print("Conexión a la base de datos cerrada.")
+
 
 if __name__ == "__main__":
     create_tables()
