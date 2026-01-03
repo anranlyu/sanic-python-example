@@ -4,3 +4,4 @@ faker
 passlib
 sanic-ext
 python-dotenv
+PyJWT
